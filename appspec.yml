@@ -6,10 +6,7 @@ files:
 hooks:
   ApplicationStop:
     - location: /opt/tomcat/bin/shutdown.sh
-  BeforeInstall:
-    - location: 
-      timeout: 300
-      runas: root
+ 
   AfterInstall:
     - location: /opt/tomcat/bin/startup.sh
       timeout: 300
