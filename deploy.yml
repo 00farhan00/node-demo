@@ -33,4 +33,4 @@ spec:
      targatePort: 3000
      nodePort: 31900
   selector:
-    app: kube
+    app: node
