@@ -30,7 +30,7 @@ spec:
   ports:
    - name: node
      port: 3000
-     targatePort: 3000
+     targetPort: 3000
      nodePort: 31900
   selector:
     app: node
