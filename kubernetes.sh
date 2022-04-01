@@ -23,3 +23,5 @@ sed -i "s#$kub_pre#$kub_post#g" /etc/nginx/conf.d/kube.conf
 
 
 service nginx restart
+
+echo "app started"
