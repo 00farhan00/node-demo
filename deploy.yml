@@ -28,8 +28,9 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - port: 3000
-  - targatePort: 3000
-  - nodePort: 31900
+   - name: node
+     port: 3000
+     targatePort: 3000
+     nodePort: 31900
   selector:
     app: kube
