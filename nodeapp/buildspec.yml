@@ -9,7 +9,7 @@ phases:
       - npm install
       - aws --version
       - aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 496746411336.dkr.ecr.eu-north-1.amazonaws.com
-      - REPOSITORY_URI=496746411336.dkr.ecr.eu-north-1.amazonaws.com/nodejs-app
+      - REPOSITORY_URI=496746411336.dkr.ecr.eu-north-1.amazonaws.com/nodeapp
       - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
   build:
     commands:
@@ -22,6 +22,6 @@ phases:
       - echo Pushing the Docker images...
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing image definitions file...
-      - printf '[{"name":"nodejs-app","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - printf '[{"name":"nodeapp","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
 artifacts:
     files: imagedefinitions.json
